@@ -1,0 +1,157 @@
+:root {
+    --Pale-blue: hsl(225, 100%, 94%);
+    --Bright-blue: hsl(245, 75%, 52%);
+    --Very-pale-blue: hsl(225, 100%, 98%);
+    --Desaturated-blue: hsl(224, 23%, 55%);
+    --Dark-blue: hsl(223, 47%, 23%);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    min-height: 100vh;
+    background: url(./images/pattern-background-desktop.svg), var(--Pale-blue);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: contain;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    max-width: 450px;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 20px hsl(227 86% 89%);
+}
+
+img {
+    max-width: 100%;
+}
+.card .info-text {
+    padding: 30px 50px;
+}
+.info-text h1 {
+    color: var(--Dark-blue);
+font-size: 28px;
+font-weight: 900;
+margin-top: 10px;
+}
+.info-text p {
+    line-height: 1.6;
+    padding: 20px;
+    font-size: 16px;
+    color: var(--Desaturated-blue);
+}
+.card .plan {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.plan li {
+    display: flex;
+}
+.card  .price {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    line-height: 1.8;
+}
+.card .price :first-child {
+    color: var(--Dark-blue);
+    font-weight: 900;
+}
+.card .price :last-child {
+    color: var(--Desaturated-blue);
+}
+.card ul :last-child {
+    color: var(--Bright-blue);
+    font-size: 14px;
+    font-weight: 700 ;
+    transition: 0.3s;
+}
+.card ul :last-child:hover {
+    color: hsl(245deg 79% 69%);
+}
+.buttons {
+    padding: 0 50px 30px;
+}
+.active {
+    max-width: 100%;
+    width: 100%;
+    padding: 14px 0;
+    color: white;
+    font-weight: 900;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: var(--Bright-blue);
+    box-shadow: 0 14px 12px hsl(245 62% 89%);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.active:hover {
+    opacity: 0.9;
+}
+.buttons :last-child {
+    background-color: transparent;
+    border: none;
+    padding: 15px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 900;
+    cursor: pointer;
+    color: var(--Desaturated-blue);
+    transition: 0.3s;
+}
+.buttons :last-child:hover {
+    color: var(--Dark-blue);
+}
+.attribution {
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    padding: 10px;
+    transform: translatex(-50%);
+    width: 100%;
+    color: var(--Bright-blue);
+}
+@media (max-width: 540px) {
+    body {
+        background-image: url(./images/pattern-background-mobile.svg), var(--Pale-blue);
+    }
+}
+@media (max-width: 540px) {
+    .card {
+        max-width: 350px;
+    }
+    .card .info-text {
+        padding: 20px 22px;
+    }
+    .info-text h1 {
+        font-size: 24px;
+    }
+    .card .plan {
+        /* padding: 10px; */
+    }
+    .buttons {
+        padding: 0 30px 15px;
+    }
+    .active {
+        padding: 16px 0;
+    }
+}
